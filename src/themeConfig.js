@@ -1,14 +1,24 @@
 import { createTheme } from '@material-ui/core/styles'
 
 const myTheme = createTheme({
-    /*palette: {
-        primary: {
-            main: '#00e676',
-            dark: '#00a152',
-            light: '#33eb91',
+    palette: {
+        background: {
+            default: "#656565"
         },
-        secondary: purple,
-    },*/
+        primary: {
+            light: "#7986cb",
+            main: "#fff",
+            dark: "#40B4F5",
+            contrastText: "#fff"
+        },
+        text: {
+            primary: "rgba(0, 0, 0, 0.87)",
+            secondary: "rgba(0, 0, 0, 0.54)",
+            disabled: "rgba(0, 0, 0, 0.38)",
+            hint: "rgba(0, 0, 0, 0.38)"
+        }
+
+    }
 })
 
 export default myTheme

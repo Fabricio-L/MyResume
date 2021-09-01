@@ -1,9 +1,12 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, makeStyles, IconButton, Button } from '@material-ui/core'
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
+import { AppBar, Toolbar, Typography, makeStyles, Button } from '@material-ui/core'
 
 const usesStyle = makeStyles(myTheme => ({
     offset: myTheme.mixins.toolbar,
+    navColor: {
+        background: "transparent",
+        boxShadow: "none"
+    },
     menuButton: {
         marginRight: myTheme.spacing(2),
     },
@@ -17,15 +20,19 @@ const Navbar = () => {
 
     return (
         <div>
-            <AppBar position="fixed" color="primary">
+            <AppBar position="fixed" className={classes.navColor}>
                 <Toolbar>
-                    <IconButton color="inherit" aria-label="menu" className={classes.menuButton}>
+                    
+                    {/* <IconButton color="inherit" aria-label="menu" className={classes.menuButton}>
                         <MenuRoundedIcon />
-                    </IconButton>
+                    </IconButton> */}
+                    
                     <Typography variant="h6" className={classes.title}>
-                        Es mi primer navbar
+                        Fabricio
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">Projects</Button>
+                    <Button color="inherit">Blog</Button>
                 </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>
