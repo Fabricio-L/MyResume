@@ -1,28 +1,26 @@
-import { makeStyles, Typography, Button, Grid, CardContent } from '@material-ui/core'
+import { makeStyles, Typography, Button, Grid, CardContent, Grow } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import myTheme from './themeConfig'
 import Navbar from './components/navbar/Navbar'
+import Contact from './components/contact/Contact'
 
 const useStyle = makeStyles( (theme) => ({
-  mainBackground: {
-    position: "absolute",
-    top: "0",
-    bottom: "0",
-    left: "0",
-    right: "0",
+  root: {
+    minHeight: "100vh",
     background: "linear-gradient(to right bottom, #40B4F5, #4F11D2 100%)",
-    backgroundSize: "100%",
-    backgroundRepeat: "no-repeat"
+    backgroundSize: "cover",
+    display: "flex",
+    alignItems: "center"
   },
   mainConteiner: {
     justifyContent: "center",
-    alignItems: "center",
-    [theme.breakpoints.between('md', 'lg')]: {
-      marginTop: "4em",
-    },
-    [theme.breakpoints.up('lg')]: {
-      marginTop: "4em",
-    }
+    //alignItems: "center",
+    // [theme.breakpoints.between('md', 'lg')]: {
+    //   marginTop: "4em",
+    // },
+    // [theme.breakpoints.up('lg')]: {
+    //   marginTop: "4em",
+    // }
   },
   myConteiner: {
     display: "flex",
@@ -101,27 +99,34 @@ function App() {
 
   return (
     <ThemeProvider theme={myTheme}>
-      <div className={classes.mainBackground}>
+      <div className={classes.root}>
         <Navbar />
         <Grid container direction="row" spacing={1} className={classes.mainConteiner}>
-
+            
             <Grid item xl={4} md={4} xs={12} sm={12} className={classes.myDiv}>
-              <CardContent className={classes.myConteiner}>
-                <img src="avatar.svg" alt="Avatar" className={classes.imgResponsive} />
-              </CardContent>
-            </Grid>
+              <Grow in={true} {...(true ? { timeout: 1000 } : {})}>
+                <CardContent className={classes.myConteiner}>
+                  <img src="avatar.svg" alt="Avatar" className={classes.imgResponsive} />
+                </CardContent>
+              </Grow>
+             </Grid>
             
             <Grid item xl={4} md={4} xs={12} sm={12} style={{marginTop: "2em"}}>
-              <Typography variant="h6" color="initial" className={classes.myParagraph}>
-                Hi im, a developer and product designer from Ireland. I'm interested in React, Node, Product Design, Jamstack, Startups, Cryptocurrencies and Music.
-              </Typography>
-              <Button variant="contained" color="primary" className={classes.myButton}>
-                Hire me!
-              </Button>
+              <Grow in={true} {...(true ? { timeout: 2000 } : {})}>
+                <Typography variant="h6" color="initial" className={classes.myParagraph}>
+                  Hi im, a developer and product designer from Ireland. I'm interested in React, Node, Product Design, Jamstack, Startups, Cryptocurrencies and Music.
+                </Typography>
+              </Grow>
+              <Grow in={true} {...(true ? { timeout: 3000 } : {})}>
+                <Button variant="contained" color="primary" className={classes.myButton}>
+                  Hire me!
+                </Button>
+              </Grow>
             </Grid>
 
         </Grid>
       </div>
+      <Contact />
     </ThemeProvider>
   );
 }
