@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
+import Blog from './components/Blog'
 
 const useStyle = makeStyles( (theme) => ({
   root: {
@@ -29,6 +30,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={ Home } />
             <Route exact path='/projects' component={ Projects } />
+            <Route exact path='/blog' component={ Blog } />
           </Switch>
         </Router>
       </div>

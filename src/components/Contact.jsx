@@ -3,19 +3,30 @@ import { Typography, makeStyles, Grid } from '@material-ui/core'
 
 const usesStyle = makeStyles(myTheme => ({
     root: {
-        display: "flex",
-        minHeight: "100vh",
-        backgroundColor: "#F0EEEE",
-        alignItems: "center",
-        justifyContent: "center"
-      },
+      display: "flex",
+      minHeight: "100vh",
+      backgroundColor: "#F0EEEE",
+      alignItems: "center",
+      justifyContent: "center"
+    },
     myContainer: {
-        width: "800px",
-        border: "solid 2px",
-        borderRadius: "30px",
-        background: "white",
-        alignItems: "center",
-        textAlign: "center"
+      border: "solid 2px",
+      borderRadius: "30px",
+      background: "white",
+      alignItems: "center",
+      textAlign: "center",
+      [myTheme.breakpoints.down('sm')]: {
+        width: "350px",
+      },
+      [myTheme.breakpoints.between('sm', 'md')]: {
+        width: "350px"
+      },
+      [myTheme.breakpoints.between('md', 'lg')]: {
+        width: "800px"
+      },
+      [myTheme.breakpoints.up('lg')]: {
+        width: "800px"
+      }
     },
     myParagraph: {
       color: "#4f11d2b8",
@@ -26,13 +37,35 @@ const usesStyle = makeStyles(myTheme => ({
       border: "solid 2px",
       borderRadius: "10px",
       padding: "13px 130px",
-      width: "60%"
+      [myTheme.breakpoints.down('sm')]: {
+        width: "90%",
+      },
+      [myTheme.breakpoints.between('sm', 'md')]: {
+        width: "90%"
+      },
+      [myTheme.breakpoints.between('md', 'lg')]: {
+        width: "60%"
+      },
+      [myTheme.breakpoints.up('lg')]: {
+        width: "60%"
+      }
     },
     cvContainer: {
-      width: "60%",
       padding: "0 !important",
       marginTop: "13px",
-      marginBottom: "23px"
+      marginBottom: "23px",
+      [myTheme.breakpoints.down('sm')]: {
+        width: "90%",
+      },
+      [myTheme.breakpoints.between('sm', 'md')]: {
+        width: "90%"
+      },
+      [myTheme.breakpoints.between('md', 'lg')]: {
+        width: "60%"
+      },
+      [myTheme.breakpoints.up('lg')]: {
+        width: "60%"
+      }
     },
     textContainer: {
       display: "flex",
@@ -43,7 +76,9 @@ const usesStyle = makeStyles(myTheme => ({
       border: "solid 2px",
       borderRadius: "13px",
       padding: "12px 10px",
-      width: "48%"
+      width: "48%",
+      color: "#000000",
+      textDecoration: "none"
     }
 }))
 
@@ -64,9 +99,11 @@ const Contact = () => {
 
               <Grid item lg={12} md={12} sm={12} className={classes.cvContainer} direction="row">
                 <div className={classes.textContainer}>
-                  <div className={classes.cvText} style={{marginRight: "2%"}}>
-                    Cv (spanish)
-                  </div>
+                  <a className={classes.cvText} style={{marginRight: "2%"}} href='https://firebasestorage.googleapis.com/v0/b/myresume-b9b45.appspot.com/o/Cv-Español-Fabricio.pdf?alt=media&token=ccb6a8f4-10d9-4877-9619-b4b1d289adb6' target="_blank" download>
+                    <div>
+                      Cv (spanish)
+                    </div>
+                  </a>
                   <div className={classes.cvText}>
                     Resume (english)
                   </div>

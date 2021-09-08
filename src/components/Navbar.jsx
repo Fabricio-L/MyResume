@@ -56,7 +56,7 @@ const Navbar = (props) => {
                         
                         <Link className={classes.myLink} to="/"><Button color="inherit">Home</Button></Link>
                         <Link className={classes.myLink} to="/projects"><Button color="inherit">Projects</Button></Link>
-                        <Link className={classes.myLink} to="/"><Button color="inherit">Blog</Button></Link>
+                        <Link className={classes.myLink} to="/blog"><Button color="inherit">Blog</Button></Link>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
