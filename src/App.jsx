@@ -15,7 +15,16 @@ const useStyle = makeStyles( (theme) => ({
     backgroundSize: "cover",
     display: "flex",
     alignItems: "center"
-  }
+  },
+  // scrollContainer: {
+  //   scrollSnapType: "y mandatory",
+  //   overflowY: "scroll",
+  //   height: "100vh",
+  //   overflowX: "hidden"
+  // },
+  // scrollSection: {
+  //   scrollSnapAlign: "start"
+  // }
 }))
 
 function App() {
@@ -24,17 +33,19 @@ function App() {
   return (
     
     <ThemeProvider theme={myTheme}>
-      <div className={classes.root}>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path='/' component={ Home } />
-            <Route exact path='/projects' component={ Projects } />
-            <Route exact path='/blog' component={ Blog } />
-          </Switch>
-        </Router>
+      <div className={classes.scrollContainer}>
+        <div className={classes.root+' '+classes.scrollSection}>
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route exact path='/' component={ Home } />
+              <Route exact path='/projects' component={ Projects } />
+              <Route exact path='/blog' component={ Blog } />
+            </Switch>
+          </Router>
+        </div>
+        <Contact />
       </div>
-      <Contact />
     </ThemeProvider>
   );
 }

@@ -43,22 +43,12 @@ const useStyle = makeStyles( (theme) => ({
     boxShadow: "9px 9px 0px 0px #dbff00, 9px 9px 0px 3px #000000",
     border: "solid 3px #000",
     color: "#000",
-    marginLeft: "10px"
+    marginLeft: "10px",
+    padding: "6px 50px !important"
   },
   myDiv: {
     display: "flex",
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: "center",
-    },
-    [theme.breakpoints.between('sm', 'md')]: {
-      justifyContent: "center",
-    },
-    [theme.breakpoints.between('md', 'lg')]: {
-      justifyContent: "flex-end",
-    },
-    [theme.breakpoints.up('lg')]: {
-      justifyContent: "flex-end",
-    }
+    justifyContent: "center"
   },
   imgResponsive: {
     [theme.breakpoints.down('sm')]: {
@@ -111,9 +101,9 @@ function Home() {
   const classes = useStyle()
 
   return (
-    <div>
+    <div className={classes.scrollSection}>
         <Grid container direction="row" spacing={1} className={classes.mainConteiner}>
-            <Grid item xl={4} md={4} xs={12} sm={12} className={classes.myDiv}>
+            <Grid item xl={5} md={5} xs={12} sm={12} className={classes.myDiv}>
                 <Grow in={true} {...(true ? { timeout: 1000 } : {})}>
                     <CardContent className={classes.myConteiner}>
                         <img src="avatar.svg" alt="Avatar" className={classes.imgResponsive} />
@@ -121,14 +111,14 @@ function Home() {
                 </Grow>
             </Grid>
             
-            <Grid item xl={4} md={4} xs={12} sm={12} style={{marginTop: "2em"}}>
+            <Grid item xl={5} md={5} xs={12} sm={12} style={{marginTop: "2em"}}>
                 <Grow in={true} {...(true ? { timeout: 2000 } : {})}>
                 <Typography variant="h6" color="initial" className={classes.myParagraph}>
                   Hello i'm Fabricio. I am a web developer, specialist in React and Javascript, passionate about design and innovation.
                 </Typography>
                 </Grow>
                 <Grow in={true} {...(true ? { timeout: 3000 } : {})}>
-                <Button variant="contained" color="primary" className={classes.myButton}>
+                <Button href="#Contact" variant="contained" color="primary" className={classes.myButton}>
                     Hire me!
                 </Button>
                 </Grow>

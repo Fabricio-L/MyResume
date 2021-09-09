@@ -4,7 +4,7 @@ import { Typography, makeStyles, Grid } from '@material-ui/core'
 const usesStyle = makeStyles(myTheme => ({
     root: {
       display: "flex",
-      minHeight: "100vh",
+      minHeight: "60vh",
       backgroundColor: "#F0EEEE",
       alignItems: "center",
       justifyContent: "center"
@@ -22,10 +22,10 @@ const usesStyle = makeStyles(myTheme => ({
         width: "350px"
       },
       [myTheme.breakpoints.between('md', 'lg')]: {
-        width: "800px"
+        width: "700px"
       },
       [myTheme.breakpoints.up('lg')]: {
-        width: "800px"
+        width: "700px"
       }
     },
     myParagraph: {
@@ -53,7 +53,7 @@ const usesStyle = makeStyles(myTheme => ({
     cvContainer: {
       padding: "0 !important",
       marginTop: "13px",
-      marginBottom: "23px",
+      marginBottom: "30px",
       [myTheme.breakpoints.down('sm')]: {
         width: "90%",
       },
@@ -86,7 +86,7 @@ const Contact = () => {
     const classes = usesStyle()
 
     return (
-        <div className={classes.root}>
+        <div id="Contact" className={classes.root}>
             <Grid container spacing={3} direction="column" className={classes.myContainer}>
               
               <Grid item md={12}>
@@ -99,7 +99,7 @@ const Contact = () => {
 
               <Grid item lg={12} md={12} sm={12} className={classes.cvContainer} direction="row">
                 <div className={classes.textContainer}>
-                  <a className={classes.cvText} style={{marginRight: "2%"}} href='https://firebasestorage.googleapis.com/v0/b/myresume-b9b45.appspot.com/o/Cv-Español-Fabricio.pdf?alt=media&token=ccb6a8f4-10d9-4877-9619-b4b1d289adb6' target="_blank" download>
+                  <a className={classes.cvText} style={{marginRight: "2%"}} href="Cv-Fabricio-Lukestik.pdf" download>
                     <div>
                       Cv (spanish)
                     </div>
