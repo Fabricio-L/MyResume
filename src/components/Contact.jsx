@@ -95,7 +95,7 @@ const Contact = () => {
 
     const handleTooltipOpen = () => {
       setOpen(true);
-      navigator.clipboard.writeText('nicolaslukestik@gmail.com')
+      navigator.clipboard.writeText('fabri.lkt@gmail.com')
     };
 
     return (
