@@ -1,7 +1,6 @@
 import React from 'react'
-import { Typography, makeStyles, Grid, Tooltip, ClickAwayListener } from '@material-ui/core'
-
-import CopyIcon from '@material-ui/icons/FileCopy';
+import { Typography, makeStyles, Grid, Tooltip, ClickAwayListener, Button } from '@material-ui/core'
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined'
 
 const usesStyle = makeStyles(myTheme => ({
     root: {
@@ -120,7 +119,7 @@ const Contact = () => {
 											// className={classes.copyBtn}
 											disableRipple 
 											onClick={handleTooltipOpen}>
-											<CopyIcon />
+											<FileCopyOutlinedIcon />
 										</Button>
 									</Tooltip>
 							  </ClickAwayListener>
