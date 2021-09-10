@@ -11,7 +11,7 @@ const useStyle = makeStyles( (theme) => ({
     border: "solid 4px #000000",
     borderRadius: "6.5em",
     boxShadow: "20px 20px 0px 0px #dbff00, 20px 20px 0px 4px #000000",
-    marginRight: "2em"
+    marginRight: "6em"
   },
   myImg: {
     width: "100%",
@@ -48,7 +48,7 @@ const useStyle = makeStyles( (theme) => ({
   },
   myDiv: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "flex-end"
   },
   imgResponsive: {
     [theme.breakpoints.down('sm')]: {
