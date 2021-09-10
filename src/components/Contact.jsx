@@ -1,5 +1,7 @@
 import React from 'react'
-import { Typography, makeStyles, Grid } from '@material-ui/core'
+import { Typography, makeStyles, Grid, Tooltip, ClickAwayListener } from '@material-ui/core'
+
+import CopyIcon from '@material-ui/icons/FileCopy';
 
 const usesStyle = makeStyles(myTheme => ({
     root: {
@@ -85,6 +87,17 @@ const usesStyle = makeStyles(myTheme => ({
 const Contact = () => {
     const classes = usesStyle()
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleTooltipClose = () => {
+      setOpen(false);
+    };
+
+    const handleTooltipOpen = () => {
+      setOpen(true);
+      navigator.clipboard.writeText('nicolaslukestik@gmail.com')
+    };
+
     return (
         <div id="Contact" className={classes.root}>
             <Grid container spacing={3} direction="column" className={classes.myContainer}>
@@ -95,6 +108,22 @@ const Contact = () => {
               
               <Grid item md={12} className={classes.mailContainer}>
                 <span style={{color: "#4f11d2b8"}}>fabri.lkt@gmail.com</span>
+                
+                <ClickAwayListener onClickAway={handleTooltipClose}>
+									<Tooltip
+										arrow
+										placement="right"
+										open={open}
+										disableTouchListener
+										title="Copied to Clipboard">
+										<Button 
+											// className={classes.copyBtn}
+											disableRipple 
+											onClick={handleTooltipOpen}>
+											<CopyIcon />
+										</Button>
+									</Tooltip>
+							  </ClickAwayListener>
               </Grid>
 
               <Grid item lg={12} md={12} sm={12} className={classes.cvContainer} direction="row">
