@@ -107,22 +107,13 @@ const Contact = () => {
               
               <Grid item md={12} className={classes.mailContainer}>
                 <span style={{color: "#4f11d2b8"}}>fabri.lkt@gmail.com</span>
-                
                 <ClickAwayListener onClickAway={handleTooltipClose}>
-									<Tooltip
-										arrow
-										placement="right"
-										open={open}
-										disableTouchListener
-										title="Copied to Clipboard">
-										<Button 
-											// className={classes.copyBtn}
-											disableRipple 
-											onClick={handleTooltipOpen}>
-											<FileCopyOutlinedIcon />
-										</Button>
-									</Tooltip>
-							  </ClickAwayListener>
+                    <Tooltip arrow placement="right" open={open} disableTouchListener title="Copied to Clipboard">
+                        <Button disableRipple onClick={handleTooltipOpen} style={{justifyContent: "flex-end"}}>
+                            <FileCopyOutlinedIcon />
+                        </Button>
+                    </Tooltip>
+                </ClickAwayListener>
               </Grid>
 
               <Grid item lg={12} md={12} sm={12} className={classes.cvContainer} direction="row">
